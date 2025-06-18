@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopZone - Your Online Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">ShopZone</div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search for products..." />
+      <button onclick="searchProducts()">Search</button>
+    </div>
+    <div class="cart-darkmode">
+      <span id="cartCount">🛒 0</span>
+      <button id="darkModeToggle">🌙</button>
+    </div>
+  </header>
+
+  <div class="controls">
+    <select id="categoryFilter" onchange="applyFilters()">
+      <option value="all">All Categories</option>
+    </select>
+
+    <select id="sortFilter" onchange="applyFilters()">
+      <option value="default">Sort By</option>
+      <option value="priceLowHigh">Price: Low to High</option>
+      <option value="priceHighLow">Price: High to Low</option>
+      <option value="ratingHighLow">Rating: High to Low</option>
+    </select>
+  </div>
+
+  <div id="error" class="error-msg"></div>
+
+  <main>
+    <section class="product-section">
+      <div id="productList" class="product-grid"></div>
+    </section>
+  </main>
+
+  <!-- Product Detail Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modalImage" />
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+      <h3 id="modalPrice"></h3>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 ShopZone. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
